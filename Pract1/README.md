@@ -4,3 +4,7 @@
 Група: ПЗПІ-23-3  
 Номер за списком: 9  
 Форма захисту: асинхронна
+
+Результат виконання програми:
+
+<img width="1113" height="613" alt="image" src="https://github.com/user-attachments/assets/b835d062-73f5-4f57-bb7e-687f035e0ed4" />
