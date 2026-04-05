@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Візуалізатор JSON — Рівень 2, Завдання 4</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="level2_task4.css"/>
+</head>
+<body>
+
+<header>
+  <div class="logo">JSON Visualizer</div>
+  <div class="badge">Рівень 2 · Завдання 4</div>
+</header>
+
+<div class="main">
+  <div class="pane">
+    <div class="pane-header">
+      <div class="pane-header-left">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        Вхідний JSON
+      </div>
+    </div>
+    <textarea id="json-input" spellcheck="false" placeholder="Вставте або введіть JSON тут..."></textarea>
+    <div class="actions">
+      <button class="btn-primary" id="btn-visualize">Візуалізувати</button>
+      <button class="btn-ghost" id="btn-example">Приклад</button>
+      <button class="btn-ghost" id="btn-clear">Очистити</button>
+    </div>
+  </div>
+
+  <div class="pane output-pane">
+    <div class="pane-header">
+      <div class="pane-header-left">Результат</div>
+    </div>
+    <div class="view-tabs">
+      <button class="view-tab active" id="tab-tree"   data-tab="tree">Дерево</button>
+      <button class="view-tab"        id="tab-table"  data-tab="table">Таблиця</button>
+      <button class="view-tab"        id="tab-pretty" data-tab="pretty">Форматований</button>
+    </div>
+    <div class="output-scroll" id="output-area">
+      <div class="placeholder">
+        <div>Введіть JSON та натисніть «Візуалізувати»</div>
+      </div>
+    </div>
+    <div class="stats" id="stats" style="display:none">
+      Ключів: <span id="stat-keys">—</span>
+      Масивів: <span id="stat-arrays">—</span>
+      Глибина: <span id="stat-depth">—</span>
+      Розмір: <span id="stat-size">—</span>
+    </div>
+  </div>
+</div>
+
+<script src="level2_task4.js"></script>
+</body>
+</html>
