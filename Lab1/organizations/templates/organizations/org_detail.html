@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>{{ org.name }}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f4f6f8; color: #333; padding: 32px; }
+  .back { display: inline-block; margin-bottom: 20px; color: #2980b9; text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+  h1 { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+  .description { color: #666; margin-bottom: 24px; font-size: 15px; }
+  .section { background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .section h2 { font-size: 18px; color: #2c3e50; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; color: #555; }
+  ul li:last-child { border-bottom: none; }
+  .empty-item { color: #aaa; font-style: italic; }
+  .actions { display: flex; gap: 12px; margin-bottom: 12px; }
+  .btn { display: inline-block; padding: 8px 16px; border-radius: 6px; font-size: 13px; text-decoration: none; }
+  .btn-primary { background: #2980b9; color: #fff; }
+  .btn-primary:hover { background: #2471a3; }
+  .btn-secondary { background: #ecf0f1; color: #333; }
+  .btn-secondary:hover { background: #dde1e3; }
+  .donation-item { display: flex; justify-content: space-between; align-items: center; }
+  .donation-info { font-size: 14px; color: #555; }
+  .donation-links { display: flex; gap: 8px; }
+  .link-edit { color: #2980b9; text-decoration: none; font-size: 13px; }
+  .link-delete { color: #e74c3c; text-decoration: none; font-size: 13px; }
+  .link-edit:hover { text-decoration: underline; }
+  .link-delete:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<a class="back" href="{% url 'org_list' %}">← Назад</a>
+<h1>{{ org.name }}</h1>
+<p class="description">{{ org.description }}</p>
+
+<div class="section">
+    <h2>Ресурси</h2>
+    <ul>
+    {% for r in org.resources.all %}
+        <li>{{ r.name }} — {{ r.quantity }} од.</li>
+    {% empty %}
+        <li class="empty-item">Немає ресурсів</li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Волонтери ({{ org.volunteers.count }})</h2>
+    <ul>
+    {% for v in org.volunteers.all %}
+        <li>{{ v.name }}</li>
+    {% empty %}
+        <li class="empty-item">Немає волонтерів</li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Проекти</h2>
+    <ul>
+    {% for p in org.projects.all %}
+        <li><strong>{{ p.title }}</strong> — {{ p.description }}</li>
+    {% empty %}
+        <li class="empty-item">Немає проектів</li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Збори пожертв</h2>
+    <div class="actions">
+        <a class="btn btn-primary" href="{% url 'donation_create' org.pk %}">+ Новий збір</a>
+        <a class="btn btn-secondary" href="{% url 'donation_list' org.pk %}">Переглянути з фільтром</a>
+    </div>
+    <ul>
+    {% for d in org.donations.all %}
+        <li class="donation-item">
+            <span class="donation-info">
+                {{ d.title }} — ціль: {{ d.goal_amount }} грн, зібрано: {{ d.collected_amount }} грн
+            </span>
+            <span class="donation-links">
+                <a class="link-edit" href="{% url 'donation_edit' d.pk %}">Редагувати</a>
+                <a class="link-delete" href="{% url 'donation_delete' d.pk %}">Видалити</a>
+            </span>
+        </li>
+    {% empty %}
+        <li class="empty-item">Немає зборів</li>
+    {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

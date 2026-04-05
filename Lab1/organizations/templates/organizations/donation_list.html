@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Збори — {{ org.name }}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f4f6f8; color: #333; padding: 32px; }
+  .back { display: inline-block; margin-bottom: 20px; color: #2980b9; text-decoration: none; font-size: 14px; }
+  .back:hover { text-decoration: underline; }
+  h1 { font-size: 24px; color: #2c3e50; margin-bottom: 24px; }
+  .filter-card { background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .filter-card p { margin-bottom: 12px; }
+  label { font-size: 13px; color: #555; margin-bottom: 4px; display: block; }
+  input, select { padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; width: 100%; }
+  input:focus, select:focus { outline: none; border-color: #2980b9; }
+  .filter-actions { display: flex; gap: 10px; margin-top: 4px; }
+  .btn { display: inline-block; padding: 8px 18px; background: #2980b9; color: #fff; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; text-decoration: none; }
+  .btn:hover { background: #2471a3; }
+  .btn-reset { background: #ecf0f1; color: #333; }
+  .btn-reset:hover { background: #dde1e3; }
+  .donation-card { background: #fff; border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; }
+  .donation-info h3 { font-size: 16px; color: #2c3e50; margin-bottom: 4px; }
+  .donation-info p { font-size: 13px; color: #666; }
+  .donation-links { display: flex; gap: 10px; }
+  .link-edit { color: #2980b9; text-decoration: none; font-size: 13px; }
+  .link-delete { color: #e74c3c; text-decoration: none; font-size: 13px; }
+  .link-edit:hover, .link-delete:hover { text-decoration: underline; }
+  .empty { text-align: center; color: #aaa; font-style: italic; padding: 24px; background: #fff; border-radius: 10px; }
+</style>
+</head>
+<body>
+<a class="back" href="{% url 'org_detail' org.pk %}">← Назад до організації</a>
+<h1>Збори пожертв — {{ org.name }}</h1>
+
+<div class="filter-card">
+    <form method="get">
+        {{ form.as_p }}
+        <div class="filter-actions">
+            <button class="btn" type="submit">Застосувати</button>
+            <a class="btn btn-reset" href="?">Скинути</a>
+        </div>
+    </form>
+</div>
+
+{% for d in donations %}
+<div class="donation-card">
+    <div class="donation-info">
+        <h3>{{ d.title }}</h3>
+        <p>Ціль: {{ d.goal_amount }} грн &nbsp;|&nbsp; Зібрано: {{ d.collected_amount }} грн &nbsp;|&nbsp; {{ d.created_at|date:"d.m.Y" }}</p>
+    </div>
+    <div class="donation-links">
+        <a class="link-edit" href="{% url 'donation_edit' d.pk %}">Редагувати</a>
+        <a class="link-delete" href="{% url 'donation_delete' d.pk %}">Видалити</a>
+    </div>
+</div>
+{% empty %}
+<div class="empty">Збори не знайдені</div>
+{% endfor %}
+</body>
+</html>

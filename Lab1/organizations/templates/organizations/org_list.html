@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Організації</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f4f6f8; color: #333; padding: 32px; }
+  h1 { font-size: 28px; margin-bottom: 24px; color: #2c3e50; }
+  .org-card { background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .org-card h2 { font-size: 20px; margin-bottom: 8px; }
+  .org-card h2 a { color: #2980b9; text-decoration: none; }
+  .org-card h2 a:hover { text-decoration: underline; }
+  .org-card p { color: #555; margin-bottom: 6px; font-size: 14px; }
+  .stats { display: flex; gap: 16px; margin-top: 10px; }
+  .stat { background: #eaf2fb; color: #2471a3; padding: 4px 12px; border-radius: 20px; font-size: 13px; }
+  .empty { background: #fff; border-radius: 10px; padding: 24px; text-align: center; color: #888; }
+  .empty a { color: #2980b9; }
+</style>
+</head>
+<body>
+<h1>Громадські організації</h1>
+{% for org in organizations %}
+<div class="org-card">
+    <h2><a href="{% url 'org_detail' org.pk %}">{{ org.name }}</a></h2>
+    <p>{{ org.description }}</p>
+    <div class="stats">
+        <span class="stat">Волонтерів: {{ org.volunteers.count }}</span>
+        <span class="stat">Проектів: {{ org.projects.count }}</span>
+        <span class="stat">Ресурсів: {{ org.resources.count }}</span>
+    </div>
+</div>
+{% empty %}
+<div class="empty">
+    <p>Організацій ще немає. Додайте через <a href="/admin/">адмін-панель</a>.</p>
+</div>
+{% endfor %}
+</body>
+</html>

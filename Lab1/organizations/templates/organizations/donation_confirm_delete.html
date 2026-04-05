@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Видалити збір</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f4f6f8; color: #333; padding: 32px; }
+  .card { background: #fff; border-radius: 10px; padding: 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); max-width: 440px; }
+  h1 { font-size: 20px; color: #2c3e50; margin-bottom: 16px; }
+  p { color: #666; margin-bottom: 24px; font-size: 14px; }
+  .actions { display: flex; gap: 12px; }
+  .btn-delete { padding: 10px 20px; background: #e74c3c; color: #fff; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; }
+  .btn-delete:hover { background: #c0392b; }
+  .btn-cancel { padding: 10px 20px; background: #ecf0f1; color: #333; border-radius: 6px; font-size: 14px; text-decoration: none; }
+  .btn-cancel:hover { background: #dde1e3; }
+</style>
+</head>
+<body>
+<div class="card">
+    <h1>Видалити збір?</h1>
+    <p>Ви впевнені що хочете видалити збір <strong>{{ donation.title }}</strong>? Цю дію не можна скасувати.</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="actions">
+            <button class="btn-delete" type="submit">Так, видалити</button>
+            <a class="btn-cancel" href="{% url 'org_detail' donation.organization.pk %}">Скасувати</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
