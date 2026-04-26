@@ -1,0 +1,49 @@
+// Colors
+$c-purple-darkest: #3b0764;
+$c-purple-deeper: #4c1d95;
+$c-purple-deep: #6d28d9;
+$c-purple: #7c3aed;
+$c-purple-light: #a78bfa;
+$c-purple-lighter: #c4b5fd;
+$c-purple-lightest: #ddd6fe;
+$c-purple-border: #e9d5ff;
+$c-purple-pale: #faf5ff;
+$c-pink: #ec4899;
+$c-pink-light: #f472b6;
+$c-pink-dark: #be185d;
+$c-pink-pale: #fdf2f8;
+$c-pink-border: #fbcfe8;
+$c-text: #2d1b69;
+$c-text-muted: #6b7280;
+$c-text-body: #374151;
+$c-text-comment: #4b5563;
+$c-white: #fff;
+$c-gray-light: #f3f4f6;
+
+// Gradients
+$grad-header: linear-gradient(135deg, $c-purple-deeper, $c-purple-deep);
+$grad-hero: linear-gradient(135deg, $c-purple-deeper 0%, $c-purple 40%, $c-pink 100%);
+$grad-article: linear-gradient(135deg, $c-purple-darkest 0%, $c-purple-deep 50%, $c-pink 100%);
+$grad-card: linear-gradient(135deg, $c-purple-deeper, $c-purple 60%, $c-pink);
+$grad-pink: linear-gradient(135deg, $c-pink, $c-pink-light);
+$grad-text: linear-gradient(135deg, $c-purple, $c-pink);
+$grad-scrollbar: linear-gradient($c-purple, $c-pink);
+
+// Shadows
+$shadow-header: 0 4px 20px rgba(76, 29, 149, 0.35);
+$shadow-btn: 0 4px 14px rgba(236, 72, 153, 0.4);
+$shadow-btn-hover: 0 6px 20px rgba(236, 72, 153, 0.55);
+$shadow-card-hover: 0 16px 40px rgba(124, 58, 237, 0.14);
+$shadow-modal: 0 20px 60px rgba(124, 58, 237, 0.2);
+$shadow-auth: 0 8px 40px rgba(124, 58, 237, 0.12);
+$focus-ring: 0 0 0 3px rgba(124, 58, 237, 0.1);
+
+// Radii
+$r-sm: 8px;
+$r-md: 10px;
+$r-lg: 12px;
+$r-xl: 16px;
+$r-pill: 20px;
+
+// Transition
+$t: all 0.3s;

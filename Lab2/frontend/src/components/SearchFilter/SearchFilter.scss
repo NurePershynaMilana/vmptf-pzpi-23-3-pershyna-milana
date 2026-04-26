@@ -1,0 +1,84 @@
+@use '../../styles/variables' as *;
+
+.search-filter {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 14px;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 11px 40px 11px 42px;
+    border: 1.5px solid $c-purple-border;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    outline: none;
+    background: $c-white;
+    color: $c-text;
+    transition: $t;
+    font-family: inherit;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.05);
+
+    &:focus {
+      border-color: $c-purple;
+      box-shadow: $focus-ring;
+    }
+
+    &::placeholder {
+      color: $c-purple-lighter;
+    }
+  }
+
+  &__clear {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: $c-purple-lighter;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 4px;
+    transition: $t;
+    line-height: 1;
+
+    &:hover {
+      color: $c-purple;
+    }
+  }
+
+  &__select {
+    padding: 11px 16px;
+    border: 1.5px solid $c-purple-border;
+    border-radius: 14px;
+    font-size: 0.875rem;
+    outline: none;
+    background: $c-white;
+    color: $c-text;
+    transition: $t;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.05);
+    min-width: 160px;
+
+    &:focus {
+      border-color: $c-purple;
+      box-shadow: $focus-ring;
+    }
+  }
+}

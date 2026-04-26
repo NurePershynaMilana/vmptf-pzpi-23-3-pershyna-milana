@@ -1,0 +1,79 @@
+@use '../../styles/variables' as *;
+
+.card {
+  background: $c-white;
+  border-radius: $r-xl;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: $t;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-card-hover;
+    border-color: rgba(124, 58, 237, 0.35);
+  }
+
+  &__top {
+    background: $grad-card;
+    padding: 20px 22px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 90px;
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: 3px 12px;
+    background: rgba(255, 255, 255, 0.18);
+    color: $c-white;
+    border-radius: $r-pill;
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: fit-content;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: $c-white;
+    line-height: 1.35;
+    letter-spacing: -0.2px;
+  }
+
+  &__body {
+    padding: 16px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  &__preview {
+    color: $c-text-muted;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: $c-purple-light;
+    padding-top: 12px;
+    border-top: 1px solid $c-gray-light;
+    font-weight: 500;
+  }
+}

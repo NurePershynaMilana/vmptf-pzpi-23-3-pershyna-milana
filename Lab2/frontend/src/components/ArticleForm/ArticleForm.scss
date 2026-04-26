@@ -1,0 +1,157 @@
+@use '../../styles/variables' as *;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 27, 105, 0.35);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal {
+  background: $c-white;
+  border-radius: $r-pill;
+  width: 100%;
+  max-width: 540px;
+  padding: 32px;
+  box-shadow: $shadow-modal;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: $grad-text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__close {
+    background: #f5f3ff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: $c-purple;
+    padding: 6px 10px;
+    border-radius: $r-sm;
+    transition: $t;
+
+    &:hover {
+      background: #ede9fe;
+    }
+  }
+}
+
+.article-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: $c-purple;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 10px 14px;
+    border: 1.5px solid $c-purple-border;
+    border-radius: $r-md;
+    font-size: 0.9rem;
+    outline: none;
+    font-family: inherit;
+    resize: vertical;
+    color: $c-text;
+    transition: $t;
+
+    &:focus {
+      border-color: $c-purple;
+      box-shadow: $focus-ring;
+    }
+  }
+
+  &__row {
+    display: flex;
+    gap: 8px;
+
+    select {
+      flex: 1;
+    }
+  }
+}
+
+.form-error {
+  color: $c-pink-dark;
+  font-size: 0.85rem;
+  background: $c-pink-pale;
+  padding: 10px 14px;
+  border-radius: $r-sm;
+  border: 1px solid $c-pink-border;
+}
+
+.field-error {
+  color: $c-pink-dark;
+  font-size: 0.8rem;
+}
+
+.btn-add-category {
+  padding: 10px 14px;
+  border-radius: $r-md;
+  border: 1.5px solid $c-purple-border;
+  background: #f5f3ff;
+  color: $c-purple;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: $t;
+  white-space: nowrap;
+  font-family: inherit;
+
+  &:hover {
+    background: #ede9fe;
+    border-color: $c-purple-light;
+  }
+
+  &--confirm {
+    background: $grad-text;
+    color: $c-white;
+    border-color: transparent;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.new-category {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  input {
+    flex: 1;
+    min-width: 140px;
+  }
+}

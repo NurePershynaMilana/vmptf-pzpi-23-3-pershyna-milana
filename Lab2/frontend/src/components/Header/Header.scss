@@ -1,0 +1,72 @@
+@use '../../styles/variables' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 64px;
+  background: $grad-header;
+  box-shadow: $shadow-header;
+
+  &__logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: $c-white;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__greeting {
+    font-size: 0.875rem;
+    color: $c-purple-lightest;
+    font-weight: 500;
+  }
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: $r-pill;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: $t;
+  display: inline-block;
+
+  &-primary {
+    background: $grad-pink;
+    color: $c-white;
+    box-shadow: $shadow-btn;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: $shadow-btn-hover;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &-outline {
+    background: rgba(255, 255, 255, 0.12);
+    color: $c-white;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}

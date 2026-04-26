@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Test User",
+      "email": "test@test.com",
+      "password": "$2a$10$wc3S419Z2cOF06vmP06F2u4cERMGB7EGBt5CzIx1XdZFCiXhXbCO."
+    },
+    {
+      "id": 2,
+      "name": "Milana",
+      "email": "tester@gmail.com",
+      "password": "$2a$10$L87fp5JKVQ/UWXTv5cDZbefXdUHUXn3FAy/ZnevMXCvhtOVIjTZBa"
+    },
+    {
+      "id": 3,
+      "name": "Milana",
+      "email": "milana.pershyna@nure.ua",
+      "password": "$2a$10$eA935GiiEghlHY0vgjltzOnHho1uPR0B5GIe8jVA1bR2Gm.gSqPxu"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Technology"
+    },
+    {
+      "id": 2,
+      "name": "Science"
+    },
+    {
+      "id": 3,
+      "name": "Lifestyle"
+    },
+    {
+      "id": 4,
+      "name": "123"
+    },
+    {
+      "id": 5,
+      "name": "234234"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "Introduction to Node.js",
+      "content": "Node.js is a powerful runtime built on Chrome V8 engine. It allows developers to use JavaScript on the server side, enabling fast and scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. With Node.js, you can build real-time applications, REST APIs, and microservices with ease.",
+      "category": "Technology",
+      "authorId": 1,
+      "authorName": "Test User",
+      "createdAt": "2024-01-15T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Getting Started with React",
+      "content": "React is a JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called components. React has been designed from the start for gradual adoption, and you can use as little or as much React as you need. React uses a virtual DOM to efficiently update the real DOM, making your applications fast.",
+      "category": "Technology",
+      "authorId": 1,
+      "authorName": "Test User",
+      "createdAt": "2024-01-16T12:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "The Future of Artificial Intelligence",
+      "content": "Artificial intelligence is transforming every industry. From healthcare to finance, AI applications are becoming more sophisticated. Machine learning models are now capable of performing tasks that were once thought to be exclusively human. Deep learning, natural language processing, and computer vision are revolutionizing how we interact with technology.",
+      "category": "Science",
+      "authorId": 1,
+      "authorName": "Test User",
+      "createdAt": "2024-01-17T14:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "title": "1234",
+      "content": "1313451543",
+      "category": "234234",
+      "authorId": 2,
+      "authorName": "Milana",
+      "createdAt": "2026-04-25T18:48:30.984Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "articleId": 1,
+      "text": "Great article about Node.js! Very informative.",
+      "authorName": "Test User",
+      "createdAt": "2024-01-15T11:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "articleId": 3,
+      "text": "djahsdkajshdajhsdasdj\n",
+      "authorName": "Test User",
+      "createdAt": "2026-04-25T16:54:42.934Z"
+    },
+    {
+      "id": 3,
+      "articleId": 3,
+      "text": "okay\n",
+      "authorName": "Milana",
+      "createdAt": "2026-04-25T16:55:15.193Z"
+    },
+    {
+      "id": 4,
+      "articleId": 3,
+      "text": "gffgfgfg",
+      "authorName": "Milana",
+      "createdAt": "2026-04-25T18:50:44.487Z"
+    }
+  ]
+}

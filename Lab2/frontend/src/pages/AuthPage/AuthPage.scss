@@ -1,0 +1,100 @@
+@use '../../styles/variables' as *;
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(160deg, $c-purple-pale 0%, $c-pink-pale 100%);
+  padding: 24px;
+}
+
+.auth-card {
+  background: $c-white;
+  border-radius: 24px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: $shadow-auth;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+
+  h1 {
+    margin: 0 0 28px;
+    font-size: 1.7rem;
+    font-weight: 800;
+    background: $grad-text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+  }
+
+  &__link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.875rem;
+    color: $c-purple-light;
+
+    a {
+      color: $c-pink;
+      text-decoration: none;
+      font-weight: 700;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-full {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: $c-purple;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  input {
+    padding: 10px 14px;
+    border: 1.5px solid $c-purple-border;
+    border-radius: $r-md;
+    font-size: 0.9rem;
+    outline: none;
+    color: $c-text;
+    font-family: inherit;
+    transition: $t;
+
+    &:focus {
+      border-color: $c-purple;
+      box-shadow: $focus-ring;
+    }
+  }
+}
+
+.form-error {
+  color: $c-pink-dark;
+  font-size: 0.85rem;
+  background: $c-pink-pale;
+  padding: 10px 14px;
+  border-radius: $r-sm;
+  border: 1px solid $c-pink-border;
+  margin: 0;
+}

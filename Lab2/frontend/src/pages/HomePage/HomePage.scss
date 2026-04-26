@@ -1,0 +1,57 @@
+@use '../../styles/variables' as *;
+
+.home {
+  &__hero {
+    background: $grad-hero;
+    color: $c-white;
+    text-align: center;
+    padding: 72px 24px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(236, 72, 153, 0.3), transparent 60%);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin: 0 0 12px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      position: relative;
+    }
+
+    p {
+      margin: 0;
+      opacity: 0.8;
+      font-size: 1.05rem;
+      position: relative;
+    }
+  }
+
+  &__content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 36px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  &__loading,
+  &__empty {
+    color: $c-purple-lighter;
+    text-align: center;
+    padding: 60px 0;
+    font-size: 0.95rem;
+  }
+}
