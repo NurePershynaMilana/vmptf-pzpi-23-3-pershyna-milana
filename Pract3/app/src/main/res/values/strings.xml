@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">NotebookApp</string>
+
+    <!-- Main -->
+    <string name="main_title">NotebookApp</string>
+    <string name="main_subtitle">Choose a section</string>
+    <string name="feature_months_title">Months</string>
+    <string name="feature_months_desc">Get month name by number</string>
+    <string name="feature_notes_title">Notes</string>
+    <string name="feature_notes_desc">Personal records and thoughts</string>
+    <string name="feature_journal_title">Attendance Journal</string>
+    <string name="feature_journal_desc">Students, lessons, attendance</string>
+
+    <!-- Months -->
+    <string name="months_toolbar">Months</string>
+    <string name="months_input_label">Enter month number (1–12)</string>
+    <string name="months_input_hint">Month number</string>
+    <string name="months_button">Show</string>
+    <string name="months_error">Enter a number from 1 to 12</string>
+    <string-array name="months_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <!-- Notes -->
+    <string name="notes_toolbar">Notes</string>
+    <string name="notes_empty">No notes yet</string>
+    <string name="notes_empty_hint">Tap «+» to add your first note</string>
+    <string name="note_add_title">New Note</string>
+    <string name="note_title_hint">Title</string>
+    <string name="note_content_hint">Text</string>
+    <string name="note_title_error">Enter a title</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="note_delete_title">Delete note?</string>
+    <string name="note_delete_message">This note will be permanently deleted.</string>
+    <string name="action_delete">Delete</string>
+    <string name="note_detail_toolbar">Note</string>
+
+    <!-- Journal -->
+    <string name="journal_toolbar">Attendance Journal</string>
+    <string name="tab_students">Students</string>
+    <string name="tab_lessons">Lessons</string>
+    <string name="tab_attendance">Attendance</string>
+
+    <string name="students_empty">No students yet</string>
+    <string name="students_empty_hint">Tap «+» to add a student</string>
+    <string name="student_add_title">New Student</string>
+    <string name="student_name_hint">Student name</string>
+    <string name="student_name_error">Enter a name</string>
+    <string name="student_delete_title">Delete student?</string>
+    <string name="student_delete_message">This student will be deleted.</string>
+
+    <string name="lessons_empty">No lessons yet</string>
+    <string name="lessons_empty_hint">Tap «+» to add a lesson</string>
+    <string name="lesson_add_title">New Lesson</string>
+    <string name="lesson_name_hint">Lesson title</string>
+    <string name="lesson_name_error">Enter a title</string>
+    <string name="lesson_pick_date">Pick date</string>
+    <string name="lesson_date_not_selected">No date selected</string>
+    <string name="lesson_date_error">Please pick a date</string>
+    <string name="lesson_delete_title">Delete lesson?</string>
+    <string name="lesson_delete_message">This lesson will be deleted.</string>
+
+    <string name="attendance_select_label">Select a lesson</string>
+    <string name="attendance_select_hint">Lesson</string>
+    <string name="attendance_students_label">Students in this lesson</string>
+    <string name="attendance_no_lesson">Select a lesson from the list above</string>
+</resources>
